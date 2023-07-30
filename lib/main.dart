@@ -11,7 +11,7 @@ void main() {
   runApp(
     ChangeNotifierProvider(
       create: (context) => AppModel(),
-      child: EnPassantApp(),
+      child: MyApp(),
     ),
   );
   _loadFlameAssets();
@@ -30,12 +30,12 @@ void _loadFlameAssets() async {
   await Flame.images.loadAll(pieceImages);
 }
 
-class EnPassantApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return CupertinoApp(
-      title: 'En Passant',
+      title: 'chessAI',
       theme: CupertinoThemeData(
         brightness: Brightness.dark,
         textTheme: CupertinoTextThemeData(
